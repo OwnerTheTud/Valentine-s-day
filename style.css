@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+* {
+    font-family: "Bad Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+body {
+    background-image: url(photos/mjh-shikder-0-D87fKieGc-unsplash.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    border-radius: 32px;
+    background-origin: border-box;
+    background-position: center;
+    color: white
+}
+
+.main {
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid white;
+    border-top: none;
+    border-radius: 32px;
+    color: pink;
+}
+
+.main h1 {
+    font-size: 40px;
+}
+
+.section p {
+    font-size: 23px;
+    padding: 20px;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+/* Assume HTML like: */
+<div class="criterion"><span class="text0">A</span><span class="text1">B</span><span class="text2">C</span>< !-- ... up to text7 --></div>.criterion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 0;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.text0,
+.text1,
+.text2,
+.text3,
+.text4,
+.text5,
+.text6,
+.text7 {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    opacity: 0;
+}
+
+/* Example for one letter – repeat & change delays/hues */
+.text0 {
+    animation:
+        text-anim-0 1s ease-in-out 1s forwards,
+        text2-anim-0 2s ease-in-out 5s forwards;
+    color: hsl(0, 80%, 60%);
+}
+
+.text0::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0;
+    background: hsl(0, 80%, 60%);
+    animation: text-after-0 2s ease-in-out 3s forwards;
+}
+
+/* Particles – even more repetition */
