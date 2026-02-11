@@ -43,17 +43,6 @@ a {
     text-decoration: none;
 }
 
-/* Assume HTML like: */
-<div class="criterion"><span class="text0">A</span><span class="text1">B</span><span class="text2">C</span>< !-- ... up to text7 --></div>.criterion {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 0;
-    font-size: 3.5rem;
-    font-weight: 500;
-}
 
 .text0,
 .text1,
@@ -89,3 +78,108 @@ a {
 }
 
 /* Particles – even more repetition */
+
+
+
+.frame-wrapper {
+    position: relative;
+    max-width: 750px;
+    margin: 60px auto;
+}
+
+.section {
+    position: relative;
+    padding: 40px;
+    background: rgba(20,20,20,0.65);
+    border-radius: 25px;
+    border: 2px solid rgba(255,105,180,0.6);
+    box-shadow:
+        0 0 15px rgba(255,105,180,0.4),
+        0 0 40px rgba(255,105,180,0.2);
+    backdrop-filter: blur(10px);
+}
+
+body {
+  margin: 0;
+  background: #111;
+}
+
+/* Kapalaklar layer */
+.butterfly-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.letter-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+@media (max-width: 768px) {
+    .section {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+
+body {
+  margin: 0;
+  background: #111;
+}
+
+/* Kapalak layer */
+.butterfly-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.letter-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Kapalak */
+.butterfly {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.wing {
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  background: hotpink;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: flap 0.25s infinite alternate ease-in-out;
+}
+
+.wing.left {
+  left: -6px;
+  transform-origin: right center;
+}
+
+.wing.right {
+  right: -6px;
+  transform-origin: left center;
+}
+
+@keyframes flap {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(70deg); }
+}
